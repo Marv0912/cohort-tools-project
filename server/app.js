@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
 const PORT = 5005;
-
 // STATIC DATA
 // Devs Team - Import the provided files with JSON data of students and cohorts here:
 
@@ -13,6 +13,10 @@ const students = require("./students.json");
 // INITIALIZE EXPRESS APP - https://expressjs.com/en/4x/api.html#express
 const app = express();
 
+// mongoose
+//   .connect("localhost:27017/cohort-tools-api")
+//   .then(x => console.log(`Connect to Database: "${x.connections[0].name}"`))
+//   .catch(err => console.error("Error connecting to MongoDB", err));
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
 
