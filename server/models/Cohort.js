@@ -3,16 +3,16 @@ const { model, Schema } = require("mongoose");
 
 //Schema - structure of document
 const cohortSchema = new Schema({
-        inProgress: Boolean,
-        cohortSlug: String,
-        cohortName: String,
-        program: String,
-        campus: String,
+        inProgress: { type: Boolean },
+        cohortSlug: { type: String},
+        cohortName: { type: String },
+        program: { type: String },
+        campus: { type: String },
         startDate: Date,
         endDate: Date,
-        programManager: String,
-        leadTeacher: String,
-        totalHours: Number
+        programManager: { type: String },
+        leadTeacher: { type: String },
+        totalHours: { type: Number }
 })
 
 module.exports = model("Cohort", cohortSchema);

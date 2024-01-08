@@ -3,16 +3,16 @@ const { model, Schema, default: mongoose } = require("mongoose");
 // Create Schema
 
 const studentSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    phone: String,
-    linkedinUrl: String,
-    languages: Array,
-    program: String,
-    background: String,
-    image: String,
-    projects: Array,
+    firstName: { type: String },
+    lastName: { type: String },
+    email: { type: String },
+    phone: { type: String },
+    linkedinUrl: { type: String },
+    languages: { type: Array },
+    program: { type: String },
+    background: { type: String },
+    image: { type: String },
+    projects: { type: Array },
     cohort: {
         type: mongoose.Types.ObjectId,
         ref: "Cohort"

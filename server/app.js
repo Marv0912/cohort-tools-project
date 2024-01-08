@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -12,6 +14,8 @@ const PORT = 5005;
 
 var cohortsRouter = require('./routes/cohorts');
 var studentsRouter = require('./routes/students');
+var authRouter = require("./routes/auth");
+var userRouter = require("./routes/user");
 
 // INITIALIZE EXPRESS APP - https://expressjs.com/en/4x/api.html#express
 const app = express();
@@ -38,8 +42,10 @@ app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/docs.html");
 });
 
+app.use('/api/users', userRouter);
 app.use('/api/cohorts', cohortsRouter);
 app.use('/api/students', studentsRouter);
+app.use('/auth', authRouter);
 
 // app.get("/api/cohorts", (req, res, next) => {
 //   return res.status(200).json(Cohorts);
